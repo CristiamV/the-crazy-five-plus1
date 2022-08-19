@@ -1,0 +1,25 @@
+<div class="carrusel"(slide.bs.carousel)="move($event)">
+  <div id="remesas-carousel" class="carousel slide carousel-fade carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/carousel-img1.jpg" class="d-block img-fluid rounded-start"  alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="assets/images/carousel-img2.jpg" class="d-block img-fluid rounded rounded-left rounded-start" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="assets/images/carousel-img3.jpg" class="d-block img-fluid rounded rounded-left rounded-start" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="assets/images/carousel-img4.jpg" class="d-block img-fluid rounded rounded-left rounded-start" alt="...">
+      </div>
+    </div>       
+    <nav class="nav nav-pills nav-fill selectores">
+      <button class="nav-link" [ngClass]="{'btn-active': selectedTab == 0}" data-bs-target="#remesas-carousel" aria-current="true" data-bs-slide-to="0"> Registro</button>
+      <button class="nav-link" [ngClass]="{'btn-active': selectedTab == 1}" data-bs-target="#remesas-carousel" data-bs-slide-to="1" >Seleción De La Empresa</button>
+      <button class="nav-link" [ngClass]="{'btn-active': selectedTab == 2}" data-bs-target="#remesas-carousel" data-bs-slide-to="2">Informacion Del Pago</button>
+      <button class="nav-link" [ngClass]="{'btn-active': selectedTab == 3}" data-bs-target="#remesas-carousel" data-bs-slide-to="3">Realizar Pago</button>
+    </nav> 
+  </div>     
+</div>
+

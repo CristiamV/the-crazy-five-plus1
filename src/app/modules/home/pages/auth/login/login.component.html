@@ -1,0 +1,65 @@
+<div class="login mb-4">
+  <div class="header">
+    <div class="iniciar">
+      <span style="color: var(--form-icon-color);">Inicia tu sesión</span>
+    </div>
+  </div>
+  <div class="typeClient">
+    <div class="persona">
+      <a>PERSONAS</a>
+      <hr>
+    </div>
+    <div class="empresa">
+      <a>EMPRESAS</a>
+      <hr>
+    </div>
+  </div>
+
+  <div *ngIf="errorStatus === true" class="alert alert-danger d-flex align-items-center alert-style" role="alert">
+    <img src="./assets/icon/error.png" alt="" style="margin-left: -5px;">
+    <div>
+      <p class="text-alert">
+        <strong>La información ingresada es incorrecta,</strong> verifica e intenta nuevamente. Luego de tres (3)
+        intentos fallidos se bloqueará tu acceso a Portal de pagos Mercantil.
+      </p>
+    </div>
+  </div>
+
+  <div class="formLogin">
+    <form class="form-login" [formGroup]="loginForm" (keyup.enter)="loginForm.valid && initLogin()">
+      <mat-form-field appearance="standard" floatLabel="always" [hideRequiredMarker]="true">
+        <mat-label class="label-format">Correo electrónico</mat-label>
+        <input matInput [type]="hideMail ? 'password' : 'text'" class="input-format" required
+          formControlName="emailFormControl" placeholder="Ingresa tu correo electrónico">
+        <button mat-icon-button matSuffix (click)="hideMail = !hideMail" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hideMail">
+          <img class="icon " alt="eye icon "
+            [src]="hideMail? './assets/icon/icoInactEye.svg' : './assets/icon/icoActEye.svg' ">
+        </button>
+      </mat-form-field>
+      <mat-error *ngIf="validateErrorCase('emailFormControl')" class="invalid">{{getErrorMessage('emailFormControl', 'required', 'Ingresa tu correo electrónico')}}
+      </mat-error>
+      <mat-form-field appearance="standard" floatLabel="always" [hideRequiredMarker]="true">
+        <mat-label class="label-format">Contraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" class="input-format" required formControlName="password"
+          placeholder="ingresa tu contraseña">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <img class="icon " alt="eye icon "
+            [src]="hide? './assets/icon/icoInactEye.svg' : './assets/icon/icoActEye.svg' ">
+        </button>
+      </mat-form-field>
+      <mat-error *ngIf="validateErrorCase('password')" class="invalid">{{getErrorMessage('password', 'required', 'Ingresa tu contraseña')}}
+      </mat-error>
+      <div class="forgot" [ngClass]="validateErrorCase('password') ? 'forgot-bottom' : ''">
+        <a>¿Olvidaste tu contraseña?</a>
+      </div>
+      <div class="btn">
+        <button type="button" class="btn btn-blue" [ngClass]="{'disabled' : !loginForm.valid}"
+          (click)="initLogin()">Iniciar Sesión</button>
+      </div>     
+
+    </form>
+  </div>
+
+</div>

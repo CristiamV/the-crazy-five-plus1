@@ -1,0 +1,27 @@
+.carousel-item{
+  img{    
+    height: 350px;    
+  }
+}
+.selectores{
+  background-color: var(--form-bg-color);  
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 30px;
+  margin-top: 25px;
+}
+.nav-link{
+  color: var(--form-icon-color);
+}
+.btn-active{
+  background-color: var(--form-info-color);
+  color: white;
+}
+
+
+
+@media (max-width: 600px) {
+  .carrusel {
+    display: none;
+  }
+}

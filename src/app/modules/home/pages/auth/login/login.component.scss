@@ -1,0 +1,178 @@
+.login {
+  /*display: flex;*/
+  justify-content: center;
+  background-color: white;
+  border: 1px solid var(--form-border-color);
+  border-radius: 3px;
+}
+
+.header {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 60px;
+  background: var(--form-bg-color);
+  padding: 16px;
+}
+
+.header span {
+  size: 12px;
+  color: #337ab7;
+}
+
+.header .iniciar {
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: -0.001em;
+  color: #4678B2;
+}
+
+.header a {
+  color: var(--form-icon-color);
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.registro {
+  display: flex;
+  justify-content: center;
+  color: var(--form-icon-color);
+
+  a {
+    text-decoration: none;
+    margin-bottom: 24px;
+    margin-top: 15px;
+    color: var(--form-icon-color);
+  }
+
+  a:hover {
+    background: var(--btn-hover-color);
+    color: white;
+    border-radius: 5px;
+  }
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  margin-top: 12px;
+  margin-bottom: 32px;  
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.001em;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    color: var(--form-icon-color);
+  }
+}
+
+.forgot-bottom {
+  margin-top: 10px;
+}
+
+.login .typeClient {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  color: #337ab7;
+
+  .persona {
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+  }
+
+  .persona:hover {
+    cursor: pointer;
+    background: var(--form-bg-color);
+    opacity: 1;
+  }
+
+  .empresa {
+    padding-top: 16px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+  }
+
+  .empresa:hover {
+    cursor: pointer;
+    background: var(--form-bg-color);
+    opacity: 1;
+  }
+}
+
+.mat-form-field {
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-blue {
+  background-color: var(--form-icon-color);
+  color: white;
+}
+
+.formLogin {
+  padding: 16px;
+}
+
+.text-alert {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #666666;
+  margin-left: 8px;
+  margin-bottom: -5px;
+}
+
+.alert-style {
+  width: 80%;
+  margin: auto;
+  background: #FFE6E6;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: -10px;
+  border: none;
+}
+
+.label-format {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #4678B2;
+}
+
+.invalid {
+  width: 90%;
+  height: 30px;
+  margin: auto;
+  background: #FFE6E6;
+  border-radius: 0px 0px 3px 3px;
+  margin-top: -22px;
+  padding: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #A1A1A1;
+}
