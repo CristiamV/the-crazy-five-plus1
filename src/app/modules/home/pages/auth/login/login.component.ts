@@ -33,7 +33,7 @@ export class LoginComponent {
     private sessionStorage: SessionStorageService,
     private dialog: MatDialog) {
     this.loginForm = this.fb.group({
-      emailFormControl: ['', [Validators.required, Validators.email, Validators.pattern(/^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$/)]],
+      emailFormControl: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]]
     });
   }

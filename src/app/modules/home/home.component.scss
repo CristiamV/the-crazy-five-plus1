@@ -1,10 +1,9 @@
- .contenedor{
-    margin: auto;
-    width: 84%;
-    background: #c0d9e459;    
- }
+.home{
+    height: 100%;
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+}
 
- .contenido{
-     margin: auto;
-     width: 95%;
- }
+#page-content {
+    flex: 1 0 auto;
+  }
