@@ -30,7 +30,7 @@ $portal-theme: mat.define-light-theme((color: (primary: $portal-primary,
 @include mat.all-component-themes($portal-theme);
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Roboto;
 }
 
 html,
@@ -70,11 +70,23 @@ input[type=number] {
     margin-left: 35%;
 }
 
-::ng-deep .mat-form-field-outline-start {
-    border-radius: 28px 0 0 28px !important;
-    min-width: 28px !important;
+/**************COLORES PERSONALIZADOS***********/
+:root {
+    --atenea-blue: #073A93;
 }
 
-::ng-deep .mat-form-field-outline-end {
-    border-radius: 0 28px 28px 0 !important;
+.notif-success {
+    z-index: 2;
+    color: #ffffff !important; // green
+    background-color: #4678b2 !important;
+    border-color: #c7e8f7 !important;
+
+    .mat-simple-snackbar-action {
+        color: #ffffff !important;
+    }
+}
+
+@font-face {
+    font-family: "Diogenes";
+    src: local("Oxygen"), url(./assets/fonts/DIOGENES.ttf) format("truetype");
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApi: 'http://10.7.0.155:8083/api/v1',  
+  baseApi: 'http://172.17.1.234:9021',  
   keySession: '43423cdfwe332',
 };
 

@@ -8,6 +8,7 @@ import { APP_ROUTES } from "./app.routes";
 import { TransactionListenerInterceptorService } from './core/services/transaction-listener/transaction-listener-interceptor.service';
 import { HomeComponent } from './modules/home/home.component';
 import { AuthModule } from './modules/home/pages/auth/auth.module';
+import { TestCapacidadModule } from './modules/home/pages/test-capacidad/test-capacidad.module';
 import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,    
     AuthModule,
+    TestCapacidadModule,
     SharedModule,
     RouterModule.forRoot(APP_ROUTES, { useHash: true }),
   ],

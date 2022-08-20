@@ -1,11 +1,6 @@
-<div class="login mb-4">
+<!-- <div class="login mb-4">
   <div class="formLogin">
-    <form class="form-login" [formGroup]="loginForm" (keyup.enter)="loginForm.valid && initLogin()">
-      <!-- <mat-form-field appearance="standard" floatLabel="always" [hideRequiredMarker]="true">
-        <mat-label class="label-format">Usuario</mat-label>
-        <input matInput type="text" class="input-format" required
-          formControlName="emailFormControl" placeholder="Ingresa tu Usuario">        
-      </mat-form-field> -->
+    <form class="form-login" [formGroup]="loginForm" (keyup.enter)="loginForm.valid && initLogin()">      
       <div class="form-input">
         <label>Usuario</label>
         <input matInput type="text" class="input-format" required
@@ -30,4 +25,22 @@
       </div>   
     </form>
   </div>
-</div>
+</div> -->
+<form class="form-input">
+  <div class="d-flex justify-content-between mt-5 mb-3">
+    <span class="login">Iniciar Sesión</span>
+    <span>Registro</span>
+  </div>  
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">    
+    <label class="form-check-label" for="exampleCheck1">Olvidé mi contraseña</label>
+  </div>
+  <button type="submit" class="btn btn-primary form-control" (click)="initLogin()">Ingresar</button>
+</form>

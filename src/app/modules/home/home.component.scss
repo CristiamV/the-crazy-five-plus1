@@ -1,9 +1,45 @@
-.home{
-    height: 100%;
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+.home {
+    height: 90%;
+    background: white;
+
 }
 
 #page-content {
     flex: 1 0 auto;
-  }
+}
+
+.navbar {
+    background: linear-gradient(#095BA7, #06207B);
+    position: relative;
+}
+.logo{
+    position: absolute;
+    left: 44%;
+    top: 10px;
+    width: 150px;
+    z-index: 2;
+}
+.my-title{
+    font-family:Diogenes;
+    z-index: 1;
+    position: relative;
+}
+.rayo{
+    position: absolute;
+    left: 270px;
+    top: 5px;
+    width: 50px;
+    opacity: 0.8;    
+}
+
+.navbar-brand {
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+    margin-left: 20px;
+
+}

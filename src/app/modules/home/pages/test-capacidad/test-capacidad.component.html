@@ -1,0 +1,78 @@
+<nav class="navbar fixed-top mb-3">
+    <a class="navbar-brand" href="#">    
+        Test de capacidades AUGERE
+    </a>
+</nav>
+<span class="test-subtitle">Queremos que desarrolles todo tu potencial. ¿Estás listo? </span>
+
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Nivel 1</ng-template>
+        <div class="questions">
+            <div class="question mb-3" *ngFor="let question of questions">
+                <div class="container">
+                    <span class="question-title">Pregunta {{question}} </span>
+                    <div class="form-check" *ngFor="let value of answers">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Respuesta {{value}}
+                        </label>
+                      </div>
+                </div>
+            </div>  
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Nivel 2</ng-template>
+        <div class="questions">
+            <div class="question mb-3" *ngFor="let question of questions">
+                <div class="container">
+                    <span class="question-title">Pregunta {{question}} </span>
+                    <div class="form-check" *ngFor="let value of answers">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Respuesta {{value}}
+                        </label>
+                      </div>
+                </div>
+            </div>  
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Nivel 3</ng-template>
+      <div class="questions">
+        <div class="question mb-3" *ngFor="let question of questions">
+            <div class="container">
+                <span class="question-title">Pregunta {{question}} </span>
+                <div class="form-check" *ngFor="let value of answers">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Respuesta {{value}}
+                    </label>
+                  </div>
+            </div>
+        </div>  
+    </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="mostrarSnakebar('Respuestas enviadas')">Enviar Respuestas</button>
+        <!-- <div class="d-flex justify-content-center mb-3">
+            <button type="submit" class="btn form-control" (click)="mostrarSnakebar('Respuestas enviadas')">Enviar Respuestas</button>
+        </div> -->
+      </div>
+    </mat-step>
+  </mat-stepper>
+
+
+<app-footer></app-footer>

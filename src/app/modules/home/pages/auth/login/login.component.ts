@@ -64,21 +64,21 @@ export class LoginComponent {
   }
 
   initLogin(): void {
-
-    const request = {
-      correo: this.loginForm.controls['emailFormControl'].value,
-      contrasena: this.loginForm.controls['password'].value
-    }
-    this.authService.login(request)
-      .subscribe({
-        next: resp => {
-          this.postLogin(resp);
-        },
-        error: err => {
-          this.errorStatus = true;
-          this.session.logged = false;
-        }
-      });
+    this.router.navigate(['/test-capacidad']);
+    // const request = {
+    //   correo: this.loginForm.controls['emailFormControl'].value,
+    //   contrasena: this.loginForm.controls['password'].value
+    // }
+    // this.authService.login(request)
+    //   .subscribe({
+    //     next: resp => {
+    //       this.postLogin(resp);
+    //     },
+    //     error: err => {
+    //       this.errorStatus = true;
+    //       this.session.logged = false;
+    //     }
+    //   });
 
   }
   
@@ -92,7 +92,7 @@ export class LoginComponent {
     this.session.mail = respLogin.data.correo;
     this.session.cedula = respLogin.data.documento;
     this.sessionStorage.setJsonValue(this.tokenSession, this.session);
-    this.router.navigate(['/servicios']);
+    this.router.navigate(['/test-capacidad']);
   }
 
   // openDialog() {
