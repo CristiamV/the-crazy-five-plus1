@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top mb-3">
     <a class="navbar-brand" href="#">    
-        Test de capacidades AUGERE
+        Test de capacidades <span style="font-family:Diogenes;">AUGERE</span>
     </a>
 </nav>
 <span class="test-subtitle">Queremos que desarrolles todo tu potencial. ¿Estás listo? </span>
@@ -22,8 +22,8 @@
                 </div>
             </div>  
         </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
+        <div >
+          <button style="float:right;" mat-button matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -43,7 +43,7 @@
                 </div>
             </div>  
         </div>
-        <div>
+        <div class="d-flex justify-content-between">
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
@@ -64,7 +64,7 @@
             </div>
         </div>  
     </div>
-      <div>
+      <div class="d-flex justify-content-between">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="mostrarSnakebar('Respuestas enviadas')">Enviar Respuestas</button>
         <!-- <div class="d-flex justify-content-center mb-3">
