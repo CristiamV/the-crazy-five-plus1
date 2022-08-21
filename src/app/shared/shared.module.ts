@@ -33,6 +33,7 @@ import { AmountFormatDirective } from './directives/amount-format.directive';
 import { NumberFormatDirective } from './directives/number-format.directive';
 import { AutocompleteOffDirective } from './directives/autocomplete-off.directive';
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +42,12 @@ import { ValidationErrorsComponent } from './components/validation-errors/valida
     AmountFormatDirective,
     NumberFormatDirective,
     AutocompleteOffDirective,    
-    ValidationErrorsComponent,
+    ValidationErrorsComponent, SideBarComponent,
   ],
   exports: [
     BannerComponent,
     FooterComponent,
+    SideBarComponent,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,

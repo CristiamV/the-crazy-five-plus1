@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-test-capacidad',
   templateUrl: './test-capacidad.component.html',
@@ -15,7 +16,7 @@ export class TestCapacidadComponent implements OnInit {
   secondFormGroup!: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,
-              private snackbar: MatSnackBar) {}
+              private snackbar: MatSnackBar,private router: Router) {}
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -27,7 +28,8 @@ export class TestCapacidadComponent implements OnInit {
   }
 
   sendAnswers(){
-
+    this.mostrarSnakebar('Respuestas enviadas');
+    this.router.navigate(['dashboard']);
   }
   mostrarSnakebar(mensaje: string) {
     console.log(this.questions.indexOf);
