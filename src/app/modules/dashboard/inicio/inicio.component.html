@@ -1,1 +1,89 @@
-<p>inicio works!</p>
+<mat-stepper linear #stepper class="stepper">
+    <mat-step>
+        <ng-template matStepLabel class="level-box">
+            <span class="nivel">Nivel</span><br>
+            <span class="hades">Hades</span>
+        </ng-template>
+        <div class="arrow-container">
+            <div class="arrow"></div>
+        </div>
+        <!-- CATEGORIAS -->
+        <div class="row justify-content-center">
+            <div class="col-2" *ngFor="let category of categories">
+                <p class="level-text">{{category}}</p>
+            </div>
+        </div>
+        <!-- NIVELES -->
+        <div class="row justify-content-center t-result" *ngFor="let sublevels of levels.hades">
+            <div class="col-2" *ngFor="let level of sublevels.level">
+                <div class="unlock" *ngIf="level == 'unlock'">
+                </div>
+                <div class="lock" *ngIf="level == 'lock'">
+                    <img src="./assets/images/candado.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button mat-button matStepperNext><img src="./assets/images/next-button.png" alt="Next"></button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>
+            <span class="nivel">Nivel</span><br>
+            <span class="hercules">Hercules</span>
+        </ng-template>
+        <div class="arrow-container">
+            <div class="arrow"></div>
+        </div>
+        <!-- CATEGORIAS -->
+        <div class="row justify-content-center">
+            <div class="col-2" *ngFor="let category of categories">
+                <p class="level-text">{{category}}</p>
+            </div>
+        </div>
+        <!-- NIVELES -->
+        <div class="row justify-content-center t-result" *ngFor="let sublevels of levels.hercules">
+            <div class="col-2" *ngFor="let level of sublevels.level">
+                <div class="unlock" *ngIf="level == 'unlock'">
+                </div>
+                <div class="lock" *ngIf="level == 'lock'">
+                    <img src="./assets/images/candado.png">
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button mat-button matStepperPrevious><img src="./assets/images/back-button.png" alt="Back"></button>
+            <button mat-button matStepperNext><img src="./assets/images/next-button.png" alt="Next"></button>
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>
+            <span class="nivel">Nivel</span><br>
+            <span class="zeus">Zeus</span>
+        </ng-template>
+        <div class="arrow-container">
+            <div class="arrow"></div>
+        </div>
+        <!-- CATEGORIAS -->
+        <div class="row justify-content-center">
+            <div class="col-2" *ngFor="let category of categories">
+                <p class="level-text">{{category}}</p>
+            </div>
+        </div>
+        <!-- NIVELES -->
+        <div class="row justify-content-center t-result" *ngFor="let sublevels of levels.zeus">
+            <div class="col-2" *ngFor="let level of sublevels.level">
+                <div class="unlock" *ngIf="level == 'unlock'">
+                </div>
+                <div class="lock" *ngIf="level == 'lock'">
+                    <img src="./assets/images/candado.png">
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button mat-button matStepperPrevious><img src="./assets/images/back-button.png" alt="Back"></button>
+            <button mat-button (click)="stepper.reset()"><img src="./assets/images/redo.png" alt="Reset"></button>
+        </div>
+    </mat-step>
+</mat-stepper>
