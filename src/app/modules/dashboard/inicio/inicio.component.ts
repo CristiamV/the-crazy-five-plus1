@@ -8,9 +8,9 @@ import { Course } from 'src/app/data/interfaces/course.interface';
 })
 export class InicioComponent implements OnInit {
 
-  courses: Course[] =[];  
-
-  categories:string[] = ["Diseño", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
+  courses: Course[] = [];
+  levels2: number[] = [1, 2, 3, 4, 5];
+  categories: string[] = ["Diseño", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
   result = {
     "diseño": "hades",
     "liderazgo": "hades",
@@ -18,11 +18,11 @@ export class InicioComponent implements OnInit {
     "arquitectura": "hercules",
     "frontend": "zeus"
   };
-  levels:any =
+  levels: any =
     {
       hades: [
         { level: ['lock', 'lock', 'unlock', 'lock', 'lock'] },
-        { level: ['lock', 'lock', 'lock'] },
+        { level: ['lock', 'lock', 'lock', '', ''] },
         { level: ['lock', 'lock', 'lock'] },
         { level: ['lock'] }],
       hercules: [
@@ -43,19 +43,43 @@ export class InicioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.categories.forEach((cate, index) => { 
-      let course: Course = {id: index,
-                              category:cate,
-                              level: {
-                                      name: 'hades',
-                                      number: index
-                              },
-                              status:'lock'};
-                              
-     this.courses.push(course)
+    this.categories.forEach((cate, index) => {
+      let course: Course = {
+        id: index,
+        category: cate,
+        level: {
+          name: 'hades',
+          number: index + 1
+        },
+        status: 'lock'
+      };
+
+      this.courses.push(course)
     });
     console.log(this.courses);
+    let course: Course = {
+      id: 5,
+      category: 'Diseño',
+      level: {
+        name: 'hades',
+        number: 3
+      },
+      status: 'unlock'
+    };
+
+    this.courses.push(course)
+    console.log(this.courses);
   }
-  
+  getStatus1(catego:string, nivel:number){    
+    const filter = this.courses.filter(course => course.category == catego && course.level.number == nivel);
+    console.log(catego,filter);
+    return filter[0] && filter[0]?.status=='unlock' ? true :false
+
+  }
+  getStatus2(catego:string, nivel:number){    
+    const filter = this.courses.filter(course => course.category == catego && course.level.number == nivel);    
+    return filter[0] && filter[0]?.status=='lock' ? true :false
+
+  }
 
 }
