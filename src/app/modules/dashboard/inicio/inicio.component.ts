@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/data/interfaces/course.interface';
 
 @Component({
   selector: 'app-inicio',
@@ -15,6 +16,7 @@ export class InicioComponent implements OnInit {
     "arquitectura": "hercules",
     "frontend": "zeus"
   };
+  courses:Course[] =[];
   levels:any =
     {
       hades: [
@@ -40,6 +42,21 @@ export class InicioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.categories.forEach((cate, index) => { 
+      let course: Course = {id: index,
+                              category:cate,
+                              level: {
+                                      name: 'hades',
+                                      number: index
+                              },
+                              status:'lock'};
+                              
+     this.courses.push(course)
+      
+
+    });
+    console.log(this.courses);
   }
+  
 
 }
