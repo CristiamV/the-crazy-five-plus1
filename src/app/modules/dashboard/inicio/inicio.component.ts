@@ -8,7 +8,9 @@ import { Course } from 'src/app/data/interfaces/course.interface';
 })
 export class InicioComponent implements OnInit {
 
-  categories = ["Diseno", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
+  courses: Course[] =[];  
+
+  categories:string[] = ["Diseño", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
   result = {
     "diseño": "hades",
     "liderazgo": "hades",
@@ -16,7 +18,6 @@ export class InicioComponent implements OnInit {
     "arquitectura": "hercules",
     "frontend": "zeus"
   };
-  courses:Course[] =[];
   levels:any =
     {
       hades: [
@@ -52,8 +53,6 @@ export class InicioComponent implements OnInit {
                               status:'lock'};
                               
      this.courses.push(course)
-      
-
     });
     console.log(this.courses);
   }

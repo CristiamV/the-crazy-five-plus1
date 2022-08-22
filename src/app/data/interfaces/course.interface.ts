@@ -4,7 +4,6 @@ export interface Course {
     category: string,
     status: string   
   }
-  
   export interface Level {
     name: string,
     number: number
