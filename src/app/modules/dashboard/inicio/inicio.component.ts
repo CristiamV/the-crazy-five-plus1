@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/data/interfaces/course.interface';
 
 @Component({
   selector: 'app-inicio',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  categories = ["Diseno", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
+  courses: Course[] =[];  
+
+  categories:string[] = ["Diseño", "FrontEnd", "BackEnd", "Arquitectura", "Liderazgo"];
   result = {
     "diseño": "hades",
     "liderazgo": "hades",
@@ -40,6 +43,22 @@ export class InicioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.categories.forEach((cate, index) => { 
+      let course: Course = {id: index,
+                              category:cate,
+                              level: {
+                                      name: 'hades',
+                                      number: index
+                              },
+                              status:'lock'};
+                              
+     this.courses.push(course)
+      // this.courses[index].category = cate;
+      // this.courses[index].id = index;
+      // this.courses[index].level.name = 'hades';
+      // this.courses[index].level.number = index;
+    });
+    console.log(this.courses);
   }
 
 }
