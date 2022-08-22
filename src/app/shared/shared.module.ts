@@ -34,6 +34,7 @@ import { NumberFormatDirective } from './directives/number-format.directive';
 import { AutocompleteOffDirective } from './directives/autocomplete-off.directive';
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { HeaderUserComponent } from './components/header-user/header-user.component';
 
 @NgModule({
   declarations: [
@@ -43,11 +44,13 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     NumberFormatDirective,
     AutocompleteOffDirective,    
     ValidationErrorsComponent, SideBarComponent,
+    HeaderUserComponent
   ],
   exports: [
     BannerComponent,
     FooterComponent,
     SideBarComponent,
+    HeaderUserComponent,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,

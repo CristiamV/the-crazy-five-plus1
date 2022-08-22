@@ -1,0 +1,18 @@
+<div class="header-user">
+  <div class="container">
+    <div class="title">
+      <span>{{username}}</span>
+    </div>
+    <div>
+      <img src="./assets/images/user-icon.png" alt="User" class="user-icon">
+    </div>
+    <div>
+      <div mat-button [matMenuTriggerFor]="menu">
+        <img src="./assets/images/menu-tres-puntos.png" class="menu">
+      </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Cerrar Sesion</button>
+      </mat-menu>
+    </div>
+  </div>
+</div>
