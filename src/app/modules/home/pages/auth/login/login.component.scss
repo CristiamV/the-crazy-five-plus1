@@ -1,92 +1,22 @@
-// .login {
-//   /*display: flex;*/
-//   justify-content: center;  
-//   border: 1px solid var(--form-border-color);
-//   border-radius: 3px;
-// }
 
-// .formLogin {
-//   padding: 16px;
-// }
-
-// .label-format {
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 16px;
-
-//   color: #4678B2;
-// }
-
-// .form-input{
-//   width: 40%;
-//   margin: auto;
-//   .input-format{  
-//     background: white;
-//     border-radius: 50%;
-//   }
-// }
-
-// .forgot {
-//   display: flex;
-//   justify-content: flex-end;
-//   margin-right: 15px;
-//   margin-top: 12px;
-//   margin-bottom: 32px;  
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 16px;
-//   letter-spacing: -0.001em;
-//   cursor: pointer;
-//   a {
-//     text-decoration: none;
-//     color: darkblue;
-//   }
-// }
-
-// .forgot-bottom {
-//   margin-top: 10px;
-// }
-
-// .mat-form-field {
-//   display: block;
-//   margin: auto;
-//   width: 40%;
-// }
-
-// .btn {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .btn-login {
-//   background-color: purple;
-//   color: white;
-// }
-
-
-
-// .invalid {
-//   width: 40%;
-//   height: 30px;
-//   margin: auto;
-//   background: #FFE6E6;
-//   border-radius: 0px 0px 3px 3px;
-//   margin-top: -22px;
-//   padding: 10px;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 12px;
-//   line-height: 14px;
-//   color: #A1A1A1;
-// }
+.invalid {  
+  height: 30px;
+  margin: auto;
+  background: #FFE6E6;
+  border-radius: 0px 0px 30px 30px;  
+  padding: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #A1A1A1;
+  text-align: center;
+}
 .form-label {
   color: var(--atenea-blue);
   font-family: Roboto;
   font-size: 18px;
   font-weight: 600;
-  //line-height: 30px;
   letter-spacing: 0em;
   text-align: center;
 }
@@ -96,7 +26,6 @@ span {
   font-family: Roboto;
   font-size: 22px;
   font-weight: 400;
-  //line-height: 47px;
   letter-spacing: 0em;
   text-align: center;
 

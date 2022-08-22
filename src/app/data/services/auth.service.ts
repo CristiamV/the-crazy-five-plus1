@@ -22,8 +22,8 @@ export class AuthService {
     return true;
   }
 
-  login(request:any): Observable<any>{
-    return this.http.post(`${this.baseApi}/usuario/login`, request)
+  login(id:number): Observable<any>{
+    return this.http.get(`${this.baseApi}/user/${id}`)
   } 
 
 }

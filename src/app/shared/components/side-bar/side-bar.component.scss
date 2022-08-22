@@ -11,7 +11,15 @@
     line-height: 40px;
     letter-spacing: 0em;
     text-align: center;
-
+    z-index: 1;  
+    position: relative;
+}
+.rayo{
+    position: absolute;
+    left: 86px;
+    top: 20px;
+    width: 45px;
+    opacity: 0.8;    
 }
 #menu{
     width: 100%;

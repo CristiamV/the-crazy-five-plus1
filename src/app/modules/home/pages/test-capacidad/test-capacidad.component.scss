@@ -59,3 +59,16 @@ button {
 button:hover{
     color: blanchedalmond;
 }
+
+.my-title{
+    font-family: Diogenes;
+    z-index: 1;
+    position: relative;
+}
+.rayo{
+    position: absolute;
+    left: 270px;
+    top: 5px;
+    width: 50px;
+    opacity: 0.8;    
+}

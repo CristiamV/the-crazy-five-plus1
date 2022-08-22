@@ -26,21 +26,25 @@
     </form>
   </div>
 </div> -->
-<form class="form-input">
+<form class="form-input" [formGroup]="loginForm">
   <div class="d-flex justify-content-between mt-5 mb-3">
     <span class="login">Iniciar Sesión</span>
     <span>Registro</span>
   </div>  
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input formControlName="emailFormControl" required #email type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div class="invalid" *ngIf="validateErrorCase('emailFormControl')">
+      {{getErrorMessage('emailFormControl')}}</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" required formControlName="password" class="form-control" id="exampleInputPassword1">
+    <div class="invalid" *ngIf="validateErrorCase('password')">
+      {{getErrorMessage('password')}}</div>
   </div>
   <div class="mb-3 form-check">    
     <label class="form-check-label" for="exampleCheck1">Olvidé mi contraseña</label>
   </div>
-  <button type="submit" class="btn btn-primary form-control" (click)="initLogin()">Ingresar</button>
+  <button type="submit" [ngClass]="{'disabled' : !loginForm.valid}" class="btn btn-primary form-control" (click)="initLogin(email)">Ingresar</button>
 </form>

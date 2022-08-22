@@ -56,7 +56,6 @@ export class InicioComponent implements OnInit {
 
       this.courses.push(course)
     });
-    console.log(this.courses);
     let course: Course = {
       id: 5,
       category: 'Diseño',

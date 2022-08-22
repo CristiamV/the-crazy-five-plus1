@@ -50,20 +50,14 @@ export class LoginComponent {
   /**
    * Obtiene errores de el control que se le pase
    * @param item: string
-   * @param errType: string
-   * @param msj: string
-   * @returns retorna un array de errores []
+   * @returns retorna un mensaje de error
    */
-  getErrorMessage(item: string, errType: string, msj: string) {
-    return this.validationService.validateErrorPersonalizado(
-      item,
-      errType,
-      msj,
-      this.loginForm
-    )
+  getErrorMessage(item: string) {
+    return this.validationService.validateErrorMessage(item,this.loginForm)
   }
 
-  initLogin(): void {
+  initLogin(email:any): void {
+    console.log(email.value);
     this.router.navigate(['/test-capacidad']);
     // const request = {
     //   correo: this.loginForm.controls['emailFormControl'].value,
@@ -95,21 +89,4 @@ export class LoginComponent {
     this.router.navigate(['/test-capacidad']);
   }
 
-  // openDialog() {
-
-  //   const dialog = this.dialog.open(RecoverPasswordComponent, {
-  //     width: '450px',
-  //     autoFocus: false,
-  //     panelClass: 'confirm-modal-container'
-  //   });
-  //   dialog.afterClosed().subscribe(
-  //     (result) => {
-  //       if (result) {
-  //         this.router.navigate(['/']);
-  //         this.sessionStorage.removeItem(environment.keySession);
-  //         this.sessionStorage.clearItems();
-  //       }
-  //     }
-  //   )
-  // }
 }

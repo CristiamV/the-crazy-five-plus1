@@ -19,16 +19,19 @@
     width: 150px;
     z-index: 2;
 }
+.my-title-container{
+    position: relative;
+}
 .my-title{
     font-family:Diogenes;
-    z-index: 1;
-    position: relative;
+    z-index: 1;  
+    position: relative;     
 }
 .rayo{
     position: absolute;
-    left: 270px;
-    top: 5px;
-    width: 50px;
+    left: 55px;
+    top: 10px;
+    width: 45px;
     opacity: 0.8;    
 }
 

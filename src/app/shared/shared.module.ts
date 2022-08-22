@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BannerComponent } from './components/banner/banner.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
@@ -32,22 +31,19 @@ import { RouterModule} from "@angular/router";
 import { AmountFormatDirective } from './directives/amount-format.directive';
 import { NumberFormatDirective } from './directives/number-format.directive';
 import { AutocompleteOffDirective } from './directives/autocomplete-off.directive';
-import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { HeaderUserComponent } from './components/header-user/header-user.component';
 
 @NgModule({
   declarations: [
-    BannerComponent,
     FooterComponent,
     AmountFormatDirective,
     NumberFormatDirective,
     AutocompleteOffDirective,    
-    ValidationErrorsComponent, SideBarComponent,
+    SideBarComponent,
     HeaderUserComponent
   ],
-  exports: [
-    BannerComponent,
+  exports: [    
     FooterComponent,
     SideBarComponent,
     HeaderUserComponent,
@@ -79,8 +75,8 @@ import { HeaderUserComponent } from './components/header-user/header-user.compon
     MatPaginatorModule,
     AmountFormatDirective,
     NumberFormatDirective,
-    AutocompleteOffDirective,    
-    ValidationErrorsComponent
+    AutocompleteOffDirective  
+    
   ],
   imports: [
     CommonModule,
