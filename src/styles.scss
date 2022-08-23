@@ -87,6 +87,16 @@ input[type=number] {
     }
 }
 
+.mat-step-icon{
+    display: none !important;
+  }
+.mat-step-text-label{
+    text-align: center !important;
+}
+.mat-step-header .mat-step-label{
+    color: rgba(0, 0, 0, 0.2);
+}
+
 @font-face {
     font-family: "Diogenes";
     src: local("Oxygen"), url(./assets/fonts/DIOGENES.ttf) format("truetype");

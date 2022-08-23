@@ -1,39 +1,51 @@
+<div class="d-flex justify-content-between">
+    <span class="title">Resultado del Test de capacidades AUGERE </span>
+    <a routerLink="/test-capacidad"><img class="level-up" src="./assets/images/level-up-btn.png" alt=""></a>
+</div>
+
 <mat-stepper linear #stepper class="stepper">
     <mat-step>
         <ng-template matStepLabel class="level-box">
             <span class="nivel">Nivel</span><br>
-            <span class="hades">Hades</span>
+            <span class="hades">HADES</span>
         </ng-template>
         <div class="arrow-container">
             <div class="arrow"></div>
         </div>
-        <!-- CATEGORIAS -->
-        <div class="row justify-content-center">
-            <div class="col-2" *ngFor="let category of categories">
-                <p class="level-text">{{category}}</p>
+        <div class="step-body">
+            <!-- CATEGORIAS -->
+            <div class="row justify-content-center">
+                <div class="col-2" *ngFor="let category of categories">
+                    <p class="level-text">{{category.es}}</p>
+                </div>
             </div>
-        </div>
-        <!-- NIVELES -->
-        <div class="row justify-content-center t-result">
-            <div class="col-2" *ngFor="let category of categories">
-                <div *ngFor="let nivel of levels2">
-                    <ng-container
-                        *ngIf="getStatus1(category, nivel); then unlocked; else getStatus2(category,nivel) ? locked : empy;">
-                    </ng-container>
-                    <ng-template #unlocked>
-                        <div class="unlock">
-                        </div>
-                    </ng-template>
-                    <ng-template #locked>
-                        <div class="lock">
-                            <img src="./assets/images/candado.png">
-                        </div>
-                    </ng-template>
-                    <ng-template #empy>
-                        <div class="empy-block">
+            <!-- NIVELES -->
+            <div class="row justify-content-center t-result">
+                <div class="col-2" *ngFor="let category of categories">
+                    <div *ngFor="let nivel of levels2">
+                        <ng-container
+                            *ngIf="getStatusHades1(category.es, nivel); then unlocked; else getStatusHades2(category.es,nivel) ? locked : empy;">
+                        </ng-container>
+                        <ng-template #unlocked>
+                            <div class="unlock">
+                                <div class="unlock-text">
+                                    <span class="course-text-ok">{{getSkillHades(category.es,nivel)}}</span>
+                                    <img src="./assets/icon/done.png">
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #locked>
+                            <div class="lock">
+                                <img style="opacity: 0.6;" src="./assets/images/candado.png">
+                                <span class="course-text">{{getSkillHades(category.es,nivel)}}</span>
+                            </div>
+                        </ng-template>
+                        <ng-template #empy>
+                            <div class="empy-block">
 
-                        </div>
-                    </ng-template>
+                            </div>
+                        </ng-template>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,24 +57,45 @@
     <mat-step>
         <ng-template matStepLabel>
             <span class="nivel">Nivel</span><br>
-            <span class="hercules">Hercules</span>
+            <span class="hercules">HERCULES</span>
         </ng-template>
         <div class="arrow-container">
             <div class="arrow"></div>
         </div>
-        <!-- CATEGORIAS -->
-        <div class="row justify-content-center">
-            <div class="col-2" *ngFor="let category of categories">
-                <p class="level-text">{{category}}</p>
-            </div>
-        </div>
-        <!-- NIVELES -->
-        <div class="row justify-content-center t-result" *ngFor="let sublevels of levels.hercules">
-            <div class="col-2" *ngFor="let level of sublevels.level">
-                <div class="unlock" *ngIf="level == 'unlock'">
+        <div class="step-body">
+            <!-- CATEGORIAS -->
+            <div class="row justify-content-center">
+                <div class="col-2" *ngFor="let category of categories">
+                    <p class="level-text">{{category.es}}</p>
                 </div>
-                <div class="lock" *ngIf="level == 'lock'">
-                    <img src="./assets/images/candado.png">
+            </div>
+            <!-- NIVELES -->
+            <div class="row justify-content-center t-result">
+                <div class="col-2" *ngFor="let category of categories">
+                    <div *ngFor="let nivel of levels2">
+                        <ng-container
+                            *ngIf="getStatusHades1(category.es, nivel); then unlocked; else getStatusHades2(category.es,nivel) ? locked : empy;">
+                        </ng-container>
+                        <ng-template #unlocked>
+                            <div class="unlock">
+                                <div class="unlock-text">
+                                    <span class="course-text-ok">{{getSkillHades(category.es,nivel)}}</span>
+                                    <img src="./assets/icon/done.png">
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #locked>
+                            <div class="lock">
+                                <img style="opacity: 0.6;" src="./assets/images/candado.png">
+                                <span class="course-text">{{getSkillHades(category.es,nivel)}}</span>
+                            </div>
+                        </ng-template>
+                        <ng-template #empy>
+                            <div class="empy-block">
+
+                            </div>
+                        </ng-template>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,24 +107,45 @@
     <mat-step>
         <ng-template matStepLabel>
             <span class="nivel">Nivel</span><br>
-            <span class="zeus">Zeus</span>
+            <span class="zeus">ZEUS</span>
         </ng-template>
         <div class="arrow-container">
             <div class="arrow"></div>
         </div>
-        <!-- CATEGORIAS -->
-        <div class="row justify-content-center">
-            <div class="col-2" *ngFor="let category of categories">
-                <p class="level-text">{{category}}</p>
-            </div>
-        </div>
-        <!-- NIVELES -->
-        <div class="row justify-content-center t-result" *ngFor="let sublevels of levels.zeus">
-            <div class="col-2" *ngFor="let level of sublevels.level">
-                <div class="unlock" *ngIf="level == 'unlock'">
+        <div class="step-body">
+            <!-- CATEGORIAS -->
+            <div class="row justify-content-center">
+                <div class="col-2" *ngFor="let category of categories">
+                    <p class="level-text">{{category.es}}</p>
                 </div>
-                <div class="lock" *ngIf="level == 'lock'">
-                    <img src="./assets/images/candado.png">
+            </div>
+            <!-- NIVELES -->
+            <div class="row justify-content-center t-result">
+                <div class="col-2" *ngFor="let category of categories">
+                    <div *ngFor="let nivel of levels2">
+                        <ng-container
+                            *ngIf="getStatusHades1(category.es, nivel); then unlocked; else getStatusHades2(category.es,nivel) ? locked : empy;">
+                        </ng-container>
+                        <ng-template #unlocked>
+                            <div class="unlock">
+                                <div class="unlock-text">
+                                    <span class="course-text-ok">{{getSkillHades(category.es,nivel)}}</span>
+                                    <img src="./assets/icon/done.png">
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #locked>
+                            <div class="lock">
+                                <img style="opacity: 0.6;" src="./assets/images/candado.png">
+                                <span class="course-text">{{getSkillHades(category.es,nivel)}}</span>
+                            </div>
+                        </ng-template>
+                        <ng-template #empy>
+                            <div class="empy-block">
+
+                            </div>
+                        </ng-template>
+                    </div>
                 </div>
             </div>
         </div>

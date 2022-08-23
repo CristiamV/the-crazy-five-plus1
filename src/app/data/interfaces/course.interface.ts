@@ -1,6 +1,7 @@
 export interface Course {
     id: number,
     level: Level,
+    skill:string,
     category: string,
     status: string   
   }
@@ -8,3 +9,6 @@ export interface Course {
     name: string,
     number: number
   }
+
+  
+  
