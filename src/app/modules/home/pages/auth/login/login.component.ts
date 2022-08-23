@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
-import { SessionStorageService } from '../../../../../core/services/session-storage/session-storage.service';
 import { AuthService } from '../../../../../data/services/auth.service';
 import { environment } from '../../../../../../environments/environment';
 import { ValidationService } from "../../../../../core/services/validation/validation.services";
@@ -30,7 +29,6 @@ export class LoginComponent {
     private validationService: ValidationService,
     private router: Router,
     private authService: AuthService,
-    private sessionStorage: SessionStorageService,
     private dialog: MatDialog) {
     this.loginForm = this.fb.group({
       emailFormControl: ['', [Validators.required]],
@@ -56,37 +54,12 @@ export class LoginComponent {
     return this.validationService.validateErrorMessage(item,this.loginForm)
   }
 
-  initLogin(email:any): void {
-    console.log(email.value);
-    this.router.navigate(['/test-capacidad']);
-    // const request = {
-    //   correo: this.loginForm.controls['emailFormControl'].value,
-    //   contrasena: this.loginForm.controls['password'].value
-    // }
-    // this.authService.login(request)
-    //   .subscribe({
-    //     next: resp => {
-    //       this.postLogin(resp);
-    //     },
-    //     error: err => {
-    //       this.errorStatus = true;
-    //       this.session.logged = false;
-    //     }
-    //   });
+  initLogin(email:any): void {    
+    this.router.navigate(['/test-capacidad']);   
 
   }
   
   
 
-  postLogin(respLogin: any): void {    
-    this.errorStatus = false;
-    this.session.nombre = respLogin.data.nombre;
-    this.session.apellido = respLogin.data.apellido;
-    this.session.userID = respLogin.data.id;
-    this.session.mail = respLogin.data.correo;
-    this.session.cedula = respLogin.data.documento;
-    this.sessionStorage.setJsonValue(this.tokenSession, this.session);
-    this.router.navigate(['/test-capacidad']);
-  }
 
 }

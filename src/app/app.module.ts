@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from "./app.routes";
-import { TransactionListenerInterceptorService } from './core/services/transaction-listener/transaction-listener-interceptor.service';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { HomeComponent } from './modules/home/home.component';
 import { AuthModule } from './modules/home/pages/auth/auth.module';
@@ -28,7 +27,6 @@ import { SharedModule } from './shared/shared.module';
   providers: [{
     provide: [HTTP_INTERCEPTORS, LOCALE_ID],
     useValue: "es-ES",
-    useClass: TransactionListenerInterceptorService,
     multi: true
   }],
   bootstrap: [AppComponent]
