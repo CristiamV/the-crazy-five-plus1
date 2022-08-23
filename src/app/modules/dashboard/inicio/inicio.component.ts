@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/data/interfaces/course.interface';
 import { DataHades } from 'src/app/data/mock/data-hades';
 import { DataHercules } from 'src/app/data/mock/data-hercules';
+import { DataZeus } from 'src/app/data/mock/data-zeus';
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -10,6 +11,7 @@ import { DataHercules } from 'src/app/data/mock/data-hercules';
 export class InicioComponent implements OnInit {
   skillsHades = DataHades.skillsHades;
   skillsHercules = DataHercules.skillsHercules;
+  skillsZeus = DataZeus.skillsZeus;
   courses: Course[] = [];
   levels2: number[] = [1, 2, 3, 4];
   categories: any[] = [
@@ -162,5 +164,162 @@ export class InicioComponent implements OnInit {
     return filter[0]?.name
 
   }  
+
+  getStatusHercules1(catego: string, nivel: number) {
+    let filter: any[] = [];
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsHercules.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsHercules.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsHercules.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsHercules.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsHercules.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    return filter[0] && filter[0]?.status == 'unlock' ? true : false
+
+  }
+  getStatusHercules2(catego: string, nivel: number) {
+    let filter: any[] = [];
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsHercules.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsHercules.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsHercules.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsHercules.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsHercules.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    console.log(filter);
+    return filter[0] && filter[0]?.status == 'lock' ? true : false
+
+  }
+  getSkillHercules(catego: string, nivel: number) {
+    let filter: any[] = [];
+    //const filter = this.courses.filter(course => course.category == catego && course.level.number == nivel);
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsHercules.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsHercules.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsHercules.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsHercules.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsHercules.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    //console.log(filter);
+    return filter[0]?.name
+
+  } 
+
+  getStatusZeus1(catego: string, nivel: number) {
+    let filter: any[] = [];
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsZeus.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsZeus.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsZeus.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsZeus.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsZeus.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    return filter[0] && filter[0]?.status == 'unlock' ? true : false
+
+  }
+  getStatusZeus2(catego: string, nivel: number) {
+    let filter: any[] = [];
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsZeus.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsZeus.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsZeus.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsZeus.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsZeus.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    console.log(filter);
+    return filter[0] && filter[0]?.status == 'lock' ? true : false
+
+  }
+  getSkillZeus(catego: string, nivel: number) {
+    let filter: any[] = [];
+    switch (catego) {
+      case 'Diseño':
+        filter = this.skillsZeus.design.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'FrontEnd':
+        filter = this.skillsZeus.frontEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'BackEnd':
+        filter = this.skillsZeus.backEnd.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Arquitectura':
+        filter = this.skillsZeus.arquitecture.filter((skill: any) => skill.level == nivel);
+        break;
+      case 'Liderazgo':
+        filter = this.skillsZeus.leadership.filter((skill: any) => skill.level == nivel);
+        break;
+
+      default:
+        break;
+    }
+    //console.log(filter);
+    return filter[0]?.name
+
+  } 
 
 }

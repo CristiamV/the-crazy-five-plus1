@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     color: var(--atenea-blue);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 47px;
     letter-spacing: 0em;
@@ -27,16 +27,16 @@
     border: 1px solid #BEBEBE;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.25);
     border-radius: 29px;
-    width: 60%;
+    width: 50%;
     height: 170px;
     margin: auto;
+    padding: 17px 12px;
 }
 
 .question-title {
     color: var(--atenea-blue);
     font-size: 16px;
-    font-weight: 700;
-    line-height: 47px;
+    font-weight: 700;    
     letter-spacing: 0em;
     text-align: center;
 
@@ -71,4 +71,7 @@ button:hover{
     top: 5px;
     width: 50px;
     opacity: 0.8;    
+}
+.mat-test-label{
+    font-size: 20px;
 }

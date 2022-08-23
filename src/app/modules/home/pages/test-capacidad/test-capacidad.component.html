@@ -9,73 +9,269 @@
 <span class="test-subtitle">Queremos que desarrolles todo tu potencial. ¿Estás listo? </span>
 
 <mat-stepper [linear]="isLinear" #stepper>
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Nivel 1</ng-template>
-        <div class="questions">
-            <div class="question mb-3" *ngFor="let question of questions">
-                <div class="container">
-                    <span class="question-title">Pregunta {{question}} </span>
-                    <div class="form-check" *ngFor="let value of answers">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Respuesta {{value}}
-                        </label>
-                      </div>
-                </div>
-            </div>  
-        </div>
-        <div >
-          <button style="float:right;" mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Nivel 2</ng-template>
-        <div class="questions">
-            <div class="question mb-3" *ngFor="let question of questions">
-                <div class="container">
-                    <span class="question-title">Pregunta {{question}} </span>
-                    <div class="form-check" *ngFor="let value of answers">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Respuesta {{value}}
-                        </label>
-                      </div>
-                </div>
-            </div>  
-        </div>
-        <div class="d-flex justify-content-between">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Nivel 3</ng-template>
+  <!-- PREGUNTAS 1 - DISEÑO -->
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>
+        <span class="mat-test-label">Diseño</span>
+      </ng-template>
       <div class="questions">
-        <div class="question mb-3" *ngFor="let question of questions">
-            <div class="container">
-                <span class="question-title">Pregunta {{question}} </span>
-                <div class="form-check" *ngFor="let value of answers">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Respuesta {{value}}
-                    </label>
-                  </div>
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento en UI?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioOne" id="flexRadioDefault1" value="value">
+              <label class="form-check-label" for="flexRadioDefault1">
+                {{value}}
+              </label>
             </div>
-        </div>  
-    </div>
+          </div>
+        </div>
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento de diseños resposive?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioTwo" id="flexRadioDefault2" value="value">
+              <label class="form-check-label" for="flexRadioDefault2">
+                {{value}}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento en UX?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioDeThree" id="flexRadioDefault3" value="value">
+              <label class="form-check-label" for="flexRadioDefault3">
+                {{value}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button style="float:right;" mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <!-- PREGUNTAS 2 - FRONTEND -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>
+        <span class="mat-test-label">FrontEnd</span>
+      </ng-template>
+      <div class="questions">
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento en HTML y CSS?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioOne" id="flexRadioDefault1" value="value">
+              <label class="form-check-label" for="flexRadioDefault1">
+                {{value}}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento en Javascript?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioTwo" id="flexRadioDefault2" value="value">
+              <label class="form-check-label" for="flexRadioDefault2">
+                {{value}}
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="question mb-3">
+          <div class="container">
+            <span class="question-title">
+              Cual consideras es tu nivel de conocimiento con algun framework de Javascript?
+            </span>
+            <div class="form-check" *ngFor="let value of level">
+              <input class="form-check-input" type="radio" name="flexRadioDeThree" id="flexRadioDefault3" value="value">
+              <label class="form-check-label" for="flexRadioDefault3">
+                {{value}}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="d-flex justify-content-between">
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="sendAnswers()">Enviar Respuestas</button>
-        <!-- <div class="d-flex justify-content-center mb-3">
-            <button type="submit" class="btn form-control" (click)="mostrarSnakebar('Respuestas enviadas')">Enviar Respuestas</button>
-        </div> -->
+        <button mat-button matStepperNext>Next</button>
       </div>
-    </mat-step>
-  </mat-stepper>
+    </form>
+  </mat-step>
+  <!-- PREGUNTAS 3 - BACKEND -->
+  <mat-step>
+    <ng-template matStepLabel>
+      <span class="mat-test-label">BackEnd</span>
+    </ng-template>
+    <div class="questions">
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en Java?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioOne" id="flexRadioDefault1" value="value">
+            <label class="form-check-label" for="flexRadioDefault1">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento de algun Framework como Node.Js, Django o Spring Boot?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioTwo" id="flexRadioDefault2" value="value">
+            <label class="form-check-label" for="flexRadioDefault2">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en creacion de API?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioDeThree" id="flexRadioDefault3" value="value">
+            <label class="form-check-label" for="flexRadioDefault3">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <!-- PREGUNTAS 4 - ANALISIS DE DATOS -->
+  <mat-step>
+    <ng-template matStepLabel>
+      <span class="mat-test-label">Análisis</span><br>
+      <span class="mat-test-label">de datos</span>
+    </ng-template>
+    <div class="questions">
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en Datos y algoritmos?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioOne" id="flexRadioDefault1" value="value">
+            <label class="form-check-label" for="flexRadioDefault1">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en lenguajes como Phyton?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioTwo" id="flexRadioDefault2" value="value">
+            <label class="form-check-label" for="flexRadioDefault2">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento con algun sistemas de gestion de bases de datos?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioDeThree" id="flexRadioDefault3" value="value">
+            <label class="form-check-label" for="flexRadioDefault3">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <!-- PREGUNTAS 5 - LIDERAZGO -->
+  <mat-step>
+    <ng-template matStepLabel>
+      <span class="mat-test-label">Liderazgo</span>
+    </ng-template>
+    <div class="questions">
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en liderazgo?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioOne" id="flexRadioDefault1" value="value">
+            <label class="form-check-label" for="flexRadioDefault1">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento de coaching?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioTwo" id="flexRadioDefault2" value="value">
+            <label class="form-check-label" for="flexRadioDefault2">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="question mb-3">
+        <div class="container">
+          <span class="question-title">
+            Cual consideras es tu nivel de conocimiento en manejo de conflictos?
+          </span>
+          <div class="form-check" *ngFor="let value of level">
+            <input class="form-check-input" type="radio" name="flexRadioDeThree" id="flexRadioDefault3" value="value">
+            <label class="form-check-label" for="flexRadioDefault3">
+              {{value}}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="sendAnswers()">Enviar Respuestas</button>
+      <!-- <div class="d-flex justify-content-center mb-3">
+          <button type="submit" class="btn form-control" (click)="mostrarSnakebar('Respuestas enviadas')">Enviar Respuestas</button>
+      </div> -->
+    </div>
+  </mat-step>
+</mat-stepper>
 
 
 <app-footer></app-footer>

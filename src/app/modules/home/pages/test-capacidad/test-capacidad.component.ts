@@ -14,6 +14,7 @@ export class TestCapacidadComponent implements OnInit {
   isLinear = false;
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
+  level = ['Hades', 'Hércules', 'Zeus'];
 
   constructor(private _formBuilder: FormBuilder,
               private snackbar: MatSnackBar,private router: Router) {}

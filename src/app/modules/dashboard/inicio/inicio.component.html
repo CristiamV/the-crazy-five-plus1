@@ -57,7 +57,7 @@
     <mat-step>
         <ng-template matStepLabel>
             <span class="nivel">Nivel</span><br>
-            <span class="hercules">HERCULES</span>
+            <span class="hercules">HÉRCULES</span>
         </ng-template>
         <div class="arrow-container">
             <div class="arrow"></div>
@@ -74,12 +74,12 @@
                 <div class="col-2" *ngFor="let category of categories">
                     <div *ngFor="let nivel of levels2">
                         <ng-container
-                            *ngIf="getStatusHades1(category.es, nivel); then unlocked; else getStatusHades2(category.es,nivel) ? locked : empy;">
+                            *ngIf="getStatusHercules1(category.es, nivel); then unlocked; else getStatusHercules2(category.es,nivel) ? locked : empy;">
                         </ng-container>
                         <ng-template #unlocked>
                             <div class="unlock">
                                 <div class="unlock-text">
-                                    <span class="course-text-ok">{{getSkillHades(category.es,nivel)}}</span>
+                                    <span class="course-text-ok">{{getSkillHercules(category.es,nivel)}}</span>
                                     <img src="./assets/icon/done.png">
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                         <ng-template #locked>
                             <div class="lock">
                                 <img style="opacity: 0.6;" src="./assets/images/candado.png">
-                                <span class="course-text">{{getSkillHades(category.es,nivel)}}</span>
+                                <span class="course-text">{{getSkillHercules(category.es,nivel)}}</span>
                             </div>
                         </ng-template>
                         <ng-template #empy>
@@ -124,12 +124,12 @@
                 <div class="col-2" *ngFor="let category of categories">
                     <div *ngFor="let nivel of levels2">
                         <ng-container
-                            *ngIf="getStatusHades1(category.es, nivel); then unlocked; else getStatusHades2(category.es,nivel) ? locked : empy;">
+                            *ngIf="getStatusZeus1(category.es, nivel); then unlocked; else getStatusZeus2(category.es,nivel) ? locked : empy;">
                         </ng-container>
                         <ng-template #unlocked>
                             <div class="unlock">
                                 <div class="unlock-text">
-                                    <span class="course-text-ok">{{getSkillHades(category.es,nivel)}}</span>
+                                    <span class="course-text-ok">{{getSkillZeus(category.es,nivel)}}</span>
                                     <img src="./assets/icon/done.png">
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                         <ng-template #locked>
                             <div class="lock">
                                 <img style="opacity: 0.6;" src="./assets/images/candado.png">
-                                <span class="course-text">{{getSkillHades(category.es,nivel)}}</span>
+                                <span class="course-text">{{getSkillZeus(category.es,nivel)}}</span>
                             </div>
                         </ng-template>
                         <ng-template #empy>
